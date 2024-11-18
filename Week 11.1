@@ -1,0 +1,35 @@
+import java.util.HashSet;
+import java.util.Scanner;
+
+public class HashSetCheck {
+    public static void main(String[] args) {
+        // Create a scanner to read input
+        Scanner scanner = new Scanner(System.in);
+        
+        // Create a HashSet to store the integers
+        HashSet<Integer> set = new HashSet<>();
+
+        // Number of elements to be added to the HashSet
+        int n = scanner.nextInt();
+        
+        // Add n elements to the HashSet
+        for (int i = 0; i < n; i++) {
+            int number = scanner.nextInt();
+            set.add(number);
+        }
+
+        // Check for specific numbers in the set
+        while (scanner.hasNext()) {
+            int checkNumber = scanner.nextInt();
+            
+            // Check if the number exists in the set
+            if (set.contains(checkNumber)) {
+                System.out.println(checkNumber + " was found in the set.");
+            } else {
+                System.out.println(checkNumber + " was not found in the set.");
+            }
+        }
+        
+        scanner.close();
+    }
+}
