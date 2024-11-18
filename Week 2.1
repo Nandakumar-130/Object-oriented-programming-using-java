@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class WakeUpTime {
+    public static String getWakeUpTime(int day, boolean onVacation) {
+        if (onVacation) {
+            
+            if (day == 1 || day == 7) {  
+                return "9:00";
+            } else {  
+                return "7:00";
+            }
+        } else {
+            
+            if (day == 1 || day == 7) {  
+                return "6:00";
+            } else {  
+                return "5:00";
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int day = scanner.nextInt();
+        boolean onVacation = scanner.nextBoolean();
+        
+        String wakeUpTime = getWakeUpTime(day, onVacation);
+        System.out.println(wakeUpTime);
+    }
+}
