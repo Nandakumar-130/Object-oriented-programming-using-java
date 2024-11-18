@@ -1,0 +1,42 @@
+import java.util.HashSet;
+import java.util.Scanner;
+
+public class SetComparison {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read number of elements for the first HashSet
+        int n1 = scanner.nextInt();
+        scanner.nextLine();  // Consume the newline character
+
+        // Create the first HashSet
+        HashSet<String> set1 = new HashSet<>();
+
+        // Read elements for the first HashSet
+        for (int i = 0; i < n1; i++) {
+            set1.add(scanner.nextLine());
+        }
+
+        // Read number of elements for the second HashSet
+        int n2 = scanner.nextInt();
+        scanner.nextLine();  // Consume the newline character
+
+        // Create the second HashSet
+        HashSet<String> set2 = new HashSet<>();
+
+        // Read elements for the second HashSet
+        for (int i = 0; i < n2; i++) {
+            set2.add(scanner.nextLine());
+        }
+
+        // Retain only the common elements in set1
+        set1.retainAll(set2);
+
+        // Print the common elements
+        for (String element : set1) {
+            System.out.println(element);
+        }
+
+        scanner.close();
+    }
+}
