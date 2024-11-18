@@ -1,0 +1,39 @@
+import java.util.*;
+public class NumberToWords {
+    
+    // Method to print a digit in words
+    public static String getWord(int digit) {
+        switch (digit) {
+            case 0: return "Zero";
+            case 1: return "One";
+            case 2: return "Two";
+            case 3: return "Three";
+            case 4: return "Four";
+            case 5: return "Five";
+            case 6: return "Six";
+            case 7: return "Seven";
+            case 8: return "Eight";
+            case 9: return "Nine";
+            default: return "";
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input the number from user
+        int num = scanner.nextInt();
+        
+        // Convert the number to string to get the individual digits
+        String numStr = Integer.toString(num);
+        
+        // Loop through each character of the string
+        for (int i = 0; i < numStr.length(); i++) {
+            char ch = numStr.charAt(i);
+            // Convert char to int and print corresponding word
+            System.out.print(getWord(Character.getNumericValue(ch)) + " ");
+        }
+        
+        scanner.close();
+}
+}
